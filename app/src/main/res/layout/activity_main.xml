@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="jp.ginyolith.questionnaire.MainViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/button_red"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_red_dark"
+            android:onClick="@{() -> viewModel.voteRed()}"
+            app:layout_constraintBottom_toTopOf="@+id/button_blue"
+            app:layout_constraintEnd_toStartOf="@+id/button_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ヒトカゲ"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/count_red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/count_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.countRed}"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintTop_toBottomOf="@id/text_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/button_yellow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFF00"
+            android:onClick="@{() -> viewModel.voteYellow()}"
+            app:layout_constraintStart_toEndOf="@id/button_blue"
+            app:layout_constraintTop_toBottomOf="@id/button_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/text_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ピカチュウ"
+                android:textColor="@android:color/black"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/count_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/count_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.countYellow}"
+                android:textColor="@android:color/black"
+                android:textSize="35sp"
+                app:layout_constraintTop_toBottomOf="@id/text_yellow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/button_blue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="ゼニガメ"
+            android:textSize="35sp"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.voteBlue()}"
+            app:layout_constraintEnd_toStartOf="@id/button_yellow"
+            app:layout_constraintTop_toBottomOf="@+id/button_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ゼニガメ"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/count_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/count_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.countBlue}"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintTop_toBottomOf="@id/text_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/button_green"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="フシギダネ"
+            android:textSize="35sp"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.voteGreen()}"
+            app:layout_constraintStart_toEndOf="@id/button_red"
+            app:layout_constraintBottom_toTopOf="@+id/button_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="フシギダネ"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/count_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/count_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.countGreen}"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:layout_constraintTop_toBottomOf="@id/text_green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
